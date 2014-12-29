@@ -4,7 +4,7 @@ type: "challenge"
 description: "Array and Hash Data Structure Drills"
 depends:
 ignore:
-- "simple-data-structure-drills.md"
+- "simple-data-structures-drills.md"
 
 ## Array Drills
 
