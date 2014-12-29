@@ -72,157 +72,79 @@ transactions[-3]
 => -8
 ```
 
-See the [Ruby docs](Link to ruby docs) about other methods the Array class has available to it.
+See the [Ruby Docs on Arrays](http://www.ruby-doc.org/core-2.2.0/Array.html) about other methods the Array class has available to it.
 
 ### Hashes
 
-What's a hash? In short, it's a collection of key-value pairs. What's a key value pair?
-
-
-### Drill manipulating a hash
-
-Say we have a data structure that stores information about people's phone numbers:
-
+What's a hash? In short, it's a collection of key-value pairs. What's a key value pair? A key-value pair is basically what it sounds like: A key, or some object, like a name has a corresponding value, or some other object that the key corresponds to. For example, the key `Launch Academy` points to another value `33 Harrison Avenue, 5th Floor, Boston, MA`. The key-value pair here looks like the following in the hash `addresses`:
 
 ```ruby
-phone_numbers = {
-  'Dan'   => '508.555.5555',
-  'Jenny' => '508.867.5309',
-  'Sam'   => '508.777.7777'
+addresses = {
+  'Launch Academy' => '33 Harrison Avenue, 5th Floor, Boston, MA'
 }
 ```
 
-#### Access a value
-
-First of all, how would we access Dan's phone number?
+Let's add more addresses to this hash:
 
 ```ruby
-phone_numbers['Dan']
+addresses['The White House']= '1600 Pennsylvania Avenue NW, Washington, DC'
 ```
 
-#### Iterate over the hash
-
-How would we print out each person's name next to their phone number, like so:
-
-```no-highlight
-Dan: 508.555.5555
-Jenny: 508.867.5309
-Sam: 508.777.7777
-```
+Now let's look at our `addresses` hash:
 
 ```ruby
-phone_numbers.each do |name, number|
-  puts "#{name}: #{number}"
-end
+addresses
+=> {"Launch Academy"=>"33 Harrison Avenue, 5th Floor, Boston, MA",
+ "The White House"=>"1600 Pennsylvania Avenue NW, Washington, DC"}
 ```
 
-### Adding numbers to the hash
+So what can we do with the hash `addresses` now?
 
-Say we want to keep track of multiple phone numbers.  For each person, we want to track both home phone and cell phone.
+Let's find out all the keys in `addresses`:
 
 ```ruby
-phone_numbers = {
-  'Dan'   => ['508.555.5555', '508.555.6666'],
-  'Jenny' => ['508.867.5309', '508.697.5555'],
-  'Sam'   => ['508.777.7777', '508.946.3214']
-}
+addresses.keys
+=> ["Launch Academy", "The White House"]
 ```
 
-Let's say that the first number is the name's home number, while the second number is their mobile number.
-
-#### Questions
-
-**Launchers should complete the following exercises independently, then have a volunteer share their example:**
-
-How would I access Dan's mobile number?
+What about all the values in `addresses`:
 
 ```ruby
-phone_numbers['Dan'][1]
+=> ["33 Harrison Avenue, 5th Floor, Boston, MA",
+ "1600 Pennsylvania Avenue NW, Washington, DC"]
 ```
 
-How would I access Sam's home number?
+Let's add another address:
 
 ```ruby
-phone_numbers['Sam'][0]
+addresses['My House'] = 'That Place, Town, State'
+=> "That Place, Town, State"
+addresses
+=> {"Launch Academy"=>"33 Harrison Avenue, 5th Floor, Boston, MA",
+ "The White House"=>"1600 Pennsylvania Avenue NW, Washington, DC",
+ "My House"=>"That Place, Town, State"}
 ```
 
-How would I write a program that outputs each person's home and mobile number?
+What if we want to change the address of `My House`?
+
+ ```ruby
+addresses['My House'] = 'Another Address, Somewhere else, Another State'
+=> "Another Address, Somewhere else, Another State"
+addresses
+=> {"Launch Academy"=>"33 Harrison Avenue, 5th Floor, Boston, MA",
+ "The White House"=>"1600 Pennsylvania Avenue NW, Washington, DC",
+ "My House"=>"Another Address, Somewhere else, Another State"}
+```
+
+Now let's take a look at all the values of the `addresses` hash:
 
 ```ruby
-phone_numbers.each do |name, numbers|
-  puts "#{name}: #{numbers[0]} (home), #{numbers[1]} (mobile)"
-end
+addresses.values
+=> ["33 Harrison Avenue, 5th Floor, Boston, MA",
+ "1600 Pennsylvania Avenue NW, Washington, DC",
+ "Another Address, Somewhere else, Another State"]
 ```
 
-How would I add a new entry in the phone book?
+Hashes are great for managing dictionary-like data. Take a look at the [Ruby Docs for Hashes](http://www.ruby-doc.org/core-2.1.5/Hash.html) for what kinds of methods Ruby has to offer about this data structure.
 
-```ruby
-phone_numbers['Adam'] = ['508.555.2134', '508.222.4324']
-```
-
-**Can anyone see any issues with this approach?**
-
-* What if we add a work number? Where do we add it?
-* How readable is this?  Is it easy to tell what piece of information I'm retrieving when I grab Sam's home phone number?
-
-**What's an alternative solution?**
-
-### Using a nested hash
-
-```ruby
-phone_numbers = {
-  'Dan'   => {
-    home: '508.555.5555',
-    mobile: '508.555.6666'
-  },
-  'Jenny' => {
-    home: '508.867.5309',
-    mobile: '508.697.5555'
-  },
-  'Sam'   => {
-    home: '508.777.7777',
-    mobile: '508.946.3214'
-  }
-}
-```
-
-**Why is this better?**
-* Easier to read and see what information we're retrieving.
-* Our code won't change if the position of a piece of information changes.  In an array, if we insert a number at the beginning of the array, we have to change all of our code that referenced particular positions in the array.  Whereas in a hash, we can insert data to our heart's content without having to change our code.
-
-#### Questions
-
-**Same as above, for first data structure.**
-
-How would I access Dan's mobile number?
-
-```ruby
-phone_numbers['Dan'][:mobile]
-```
-
-How would I access Sam's home number?
-
-```ruby
-phone_numbers['Sam'][:home]
-```
-
-How would I write a program that outputs each person's home and mobile number?
-
-```ruby
-phone_numbers.each do |name, numbers|
-  puts "#{name}: #{numbers[:home]} (home), #{numbers[:mobile]} (mobile)"
-end
-```
-
-How would I add a new entry in the phone book?
-
-```ruby
-phone_numbers['Adam'] = {
-  home: '508.555.2134',
-  mobile: '508.222.4324'
-}
-```
-
-## Screencast
-
-[Livecode of above link](. . . is here . . .)
+Later on we'll talk about compound data structures like arrays of hashes, hashes of hashes, or hashes of arrays.
