@@ -74,50 +74,35 @@ This translates to the following in English:
 
 It's worth noting here that we can write as many lines of code as we want in the `do` block. We're not limited to single line statements, which is great, because we can do more complicated tasks.
 
-<!-- Example -->
-
 So we've looked at arrays with `.each` but how does that method work with hashes?
 
 Let's look at the following hash, as an example:
 
 ```ruby
-hash = {"Dan" => 7, "Adam" => 7, "Richard" => 3, "Omid" => 2, "Spencer" => 1, "Vikram" => 1}
+ages = {"Tom" => 20, "Jane" => 24, "Toby" => 12, "Mary" => 18, "Melissa" => 32, "Ernst" => 45}
 ```
 
 There is a slight difference when iterating with `.each` on a hash versus an array. Instead of considering one argument in what goes between the two `|`, we consider two: the key and the value of the hash.
 
 ```ruby
-hash.each do |key, value|
-  puts "The key of this pair is #{key} and the value of this pair is #{value}"
+ages.each do |key, value|
+  puts "#{key} is #{value} years old."
 end
 ```
 
 How does this read in English?
 
-`For each key-value pair in hash, print out the key and the value. Also specify which is the key and which is the value.`
+`For each key-value pair in ages, print out the key and the value. Print it out in the form of 'key' is 'value' years old.`
 
 Here's the output.
 
 ```ruby
-The key of this pair is Dan and the value of this pair is 7
-The key of this pair is Adam and the value of this pair is 7
-The key of this pair is Richard and the value of this pair is 3
-The key of this pair is Omid and the value of this pair is 2
-The key of this pair is Spencer and the value of this pair is 1
-The key of this pair is Vikram and the value of this pair is 1
+Tom is 20 years old.
+Jane is 24 years old.
+Toby is 12 years old.
+Mary is 18 years old.
+Melissa is 32 years old.
+Ernst is 45 years old.
 ```
 
-
-
-```ruby
-best_records = {
- "Tupac"=>"All Eyez on Me",
- "Eminem"=>"The Marshall Mathers LP",
- "Wu-Tang Clan"=>"Enter the Wu-Tang (36 Chambers)",
- "Led Zeppelin"=>"Physical Graffiti",
- "Metallica"=>"The Black Album",
- "Pink Floyd"=>"The Dark Side of the Moon",
- "Pearl Jam"=>"Ten",
- "Nirvana"=>"Nevermind"
- }
-```
+`.each` is an optimized method to iterate over an array or hash in Ruby. Take a look at the [Enumerable](http://ruby-doc.org/core-2.2.0/Enumerable.html) mixin to see what other methods are available that work in a similar manner.
