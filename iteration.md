@@ -14,7 +14,9 @@ You might have come across [looping](http://www.ruby-doc.org/docs/Tutorial/part_
 
 ### `.each`
 
-`.each` is a method that traverses an object (like an array or a hash) and does something (based on a block of code) to each object. That may sound a bit complicated at first, but let's take a look at a simple implementation of `.each`:
+`.each` is a method that traverses an object (like an array or a hash) and does something (based on a block of code) to each object. That may sound a bit complicated at first, but let's take a look at a simple implementation of `.each` with an array.
+
+### Arrays
 
 ```ruby
 ["This", "sentence", "is", "words", "in", "order"].each do |word|
@@ -76,6 +78,8 @@ It's worth noting here that we can write as many lines of code as we want in the
 
 So we've looked at arrays with `.each` but how does that method work with hashes?
 
+### Hashes
+
 Let's look at the following hash, as an example:
 
 ```ruby
@@ -105,4 +109,4 @@ Melissa is 32 years old.
 Ernst is 45 years old.
 ```
 
-`.each` is an optimized method to iterate over an array or hash in Ruby. Take a look at the [Enumerable](http://ruby-doc.org/core-2.2.0/Enumerable.html) mixin to see what other methods are available that work in a similar manner.
+`.each` is an optimized method to iterate over an array or hash in Ruby. You will see it very often. Take a look at the [Enumerable](http://ruby-doc.org/core-2.2.0/Enumerable.html) mixin to see what other methods are available that work in a similar manner.

@@ -1,6 +1,3 @@
-- Will cover nested arrays and hashes, why they are important (API JSON), how often you will see them, etc.
-- Examples.
-
 ## Compound Data Structures
 
 We've covered basic arrays and hashes, but it's rare that as software developers we will have to deal with such basic data structures in real-world applications. What we will typically see are more complex data structures, which are often deeply nested versions of the basic data structures we've covered. For example, JavaScript Object Notation, or JSON, is a format that is typically used in API calls. This format is an example of the kind of compound data structure a software developer would see on a regular basis. The Yelp search [API](http://www.yelp.com/developers/documentation/v2/search_api) returns a JSON response that can look like the following:
