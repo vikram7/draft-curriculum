@@ -35,7 +35,6 @@ Write Ruby code to find out the answers to the following questions:
 * What is the total value of all the transactions?
 * If Dr. Dre's initial balance was $239,900 in this account, what is the value of his balance after his last transaction?
 
-
 (Note: The [Ruby docs on Arrays](http://www.ruby-doc.org/core-2.2.0/Array.html) is a great resource for Ruby's Array data structure and its methods.)
 
 ## Hash Drills
