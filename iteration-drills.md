@@ -12,13 +12,26 @@ Here we will drill iteration concepts using `.each` for arrays, hashes and compo
 
 ### Turning `.each` into English
 
+*example*
+
+```ruby
+# cities is an array
+cities.each do |city|
+  puts city
+end
+```
+
+*answer*
+
+`For every element called 'city' in the array 'cities', print out 'city' `
+
 Write English interpretations of the following Ruby code:
 
 1.
 
 ```ruby
-# array is an array
-array.each do |number|
+# numbers is an array
+numbers.each do |number|
   puts 3 * number
 end
 ```
@@ -26,8 +39,8 @@ end
 2.
 
 ```ruby
-# array is an array
-array.each do |name|
+# names is an array
+names.each do |name|
   puts name.count
 end
 ```
@@ -35,9 +48,9 @@ end
 3.
 
 ```ruby
-# array is an array
+# numbers is an array
 sum = 0
-array.each do |number|
+numbers.each do |number|
   sum += number
 end
 puts sum
@@ -71,6 +84,30 @@ addresses.each do |name, address|
   puts "#{name} lives on #{address}"
 end
 ```
+
+### Turning English into `.each`
+
+*example*
+`For every element 'number' in the array 'numbers' print out the number.`
+
+*answer*
+```ruby
+numbers.each do |number|
+  puts number
+end
+```
+
+1. `For every element 'word' in the array 'sentences' print out the word.`
+
+2. `For every element 'phone_number' in the array 'numbers' print out the phone number if it is a MA area code.`
+
+3. `For every element number in the array 'numbers' print out every odd number.`
+
+4. `For every name-age pair in the hash 'ages', print out each pair.`
+
+5. `For every name-age pair in the hash 'ages', print out a pair if the age is > 10.`
+
+6. `For every name-age pair in the hash 'ages', print out a pair if the age is even.`
 
 ### Arrays
 
