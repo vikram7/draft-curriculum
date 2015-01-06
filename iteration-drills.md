@@ -22,7 +22,7 @@ end
 ```
 
 *answer*
-
+#
 `For every element called 'city' in the array 'cities', print out 'city' `
 
 Write English interpretations of the following Ruby code:
